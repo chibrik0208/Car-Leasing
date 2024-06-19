@@ -1,0 +1,38 @@
+<% content_for :header_class, 'header-black' %>
+<section class="contacts">
+  <div class="container">
+    <h2 class="section-title contact__title">
+      Contact Me
+    </h2>
+    <p class="contacts__text">
+      Feel free to contact me with questions or potential partnerships
+    </p>
+    <ul class="contacts__list">
+      <li class="contacts__item">
+        <div class="contacts__item-content">
+          <%= image_tag 'Telegram_logo.svg', style:"width: 80px; height: 80px" , class: 'contacts__item-img', alt: 'contact me via Telegram' %>
+          <h3 class="contacts__item-title">
+            Message me in Telegram
+          </h3>
+        </div>
+      </li>
+      <li class="contacts__item">
+        <div class="contacts__item-content">
+          <%= image_tag 'Gmail_logo.svg', style:"width: 80px; height: 80px" , class: 'contacts__item-img', alt: 'contact me via Gmail' %>
+          <h3 class="contacts__item-title">
+            Send me a mail
+          </h3>
+        </div>
+      </li>
+      <li class="contacts__item">
+        <div class="contacts__item-content">
+          <%= image_tag 'Github_logo.svg', style:"width: 80px; height: 80px" , class: 'contacts__item-img', alt: 'My projects on github' %>
+          <h3 class="contacts__item-title">
+            Check out my other projects
+          </h3>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+<%= render 'blog' %>

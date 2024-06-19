@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D&M Leasing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- header section starts -->
+      <header class="header <%= yield(:header_class) %>" >
+        <div class="container">
+          <div class="header__inner">
+            <%= link_to root_path, class: 'logo' do %>
+              <%= image_tag 'logo.svg', class: 'logo__img', alt: 'Logo' %>
+            <% end %>
+            <nav class="menu">
+              <ul class="menu__list">
+                <li class="menu__list-item">
+                  <%= link_to 'NEW CARS', new_cars_path, class: ('menu__list-link' + (current_page?(new_cars_path) ? ' menu__list--active' : '')) %>
+                </li>
+                <li class="menu__list-item">
+                  <%= link_to 'PRE-OWNED CARS', '#', class: 'menu__list-link' %>
+                </li>
+                <li class="menu__list-item">
+                  <%= link_to 'FINANCE', '#', class: 'menu__list-link' %>
+                </li>
+                <li class="menu__list-item">
+                  <%= link_to 'LEASE VS BUY', '#', class: 'menu__list-link' %>
+                </li>
+                <li class="menu__list-item">
+                  <%= link_to 'CONTACT US', contact_path, class: ('menu__list-link' + (current_page?(contact_path) ? ' menu__list--active' : '')) %>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <!-- header section ends -->
+      <!-- main section starts -->
+      <main class="main">
+        <%= yield %>
+      </main>
+      <!-- main section ends -->
+      <!-- footer section starts -->
+      <footer class="footer">
+        <div class="container">
+          <nav class="footer__menu">
+            <ul class="footer__menu-list">
+              <li class="footer__menu-item">
+                <p class="footer__menu-title">Products</p>
+              </li>
+              <li class="footer__menu-item">
+                <%= link_to 'Used', '#', class: 'footer__menu-link' %>
+              </li>
+              <li class="footer__menu-item">
+                <%= link_to 'New', '#', class: 'footer__menu-link' %>
+              </li>
+              <li class="footer__menu-item">
+                <%= link_to 'Sell your car', '#', class: 'footer__menu-link' %>
+              </li>
+            </ul>
+            <ul class="footer__menu-list">
+              <li class="footer__menu-item">
+                <p class="footer__menu-title">Resources</p>
+              </li>
+              <li class="footer__menu-item">
+                <%= link_to 'Blog', '#', class: 'footer__menu-link' %>
+              </li>
+              <li class="footer__menu-item">
+                <%= link_to 'FAQ', '#', class: 'footer__menu-link' %>
+              </li>
+              <li class="footer__menu-item">
+                <%= link_to 'Contact Us', '#', class: 'footer__menu-link' %>
+              </li>
+            </ul>
+            <ul class="footer__menu-list">
+              <li class="footer__menu-item">
+                <p class="footer__menu-title">Work With True Car</p>
+              </li>
+              <li class="footer__menu-item">
+                <%= link_to 'Dealers', '#', class: 'footer__menu-link' %>
+              </li>
+              <li class="footer__menu-item">
+                <%= link_to 'Partners', '#', class: 'footer__menu-link' %>
+              </li>
+            </ul>
+            <ul class="footer__menu-list">
+              <li class="footer__menu-item">
+                <p class="footer__menu-title">About</p>
+              </li>
+              <li class="footer__menu-item">
+                <%= link_to 'About Us', '#', class: 'footer__menu-link' %>
+              </li>
+              <li class="footer__menu-item">
+                <%= link_to 'Team', '#', class: 'footer__menu-link' %>
+              </li>
+              <li class="footer__menu-item">
+                <%= link_to 'Careers', '#', class: 'footer__menu-link' %>
+              </li>
+            </ul>
+          </nav>
+          <ul class="app">
+            <li class="app__item">
+              <%= link_to root_path, class: 'app_item-link' do %>
+                <%= image_tag 'appstore.svg', class: 'app__item-img', alt: 'get it on AppStore' %>
+              <% end %>
+            </li>
+            <li class="app__item">
+              <%= link_to root_path, class: 'logo' do %>
+                <%= image_tag 'googleplay.svg', class: 'app__item-img', alt: 'download at Google Play' %>
+              <% end %>
+            </li>
+          </ul>
+          <div class="footer__copy">
+            <p class="footer__copy-text">
+              For questions about the TrueCar Auto Buying Service please call 1-888-878-3227.
+              Certified Dealers are contractually obligated by TrueCar to meet certain customer service 
+              requirements and complete the TrueCar Dealer Certification Program.
+            </p>
+            <p class="footer__copy-text">
+              TrueCar does not broker, sell, or lease motor vehicles. Unless otherwise noted, all 
+              vehicles shown on this website are offered for sale by licensed motor vehicle dealers. 
+              All vehicles are subject to prior sale. By accessing this website, you agree to the TrueCar 
+              Terms of Service and Privacy Policy.
+            </p>
+          </div>
+          <nav class="copy__nav">
+            <ul class="copy__nav-list">
+              <li class="copy__nav-item">
+                <%= link_to 'Terms of Service', '#', class: 'copy__nav-link' %>
+              </li>
+              <li class="copy__nav-item">
+                <%= link_to 'Privacy Policy', '#', class: 'copy__nav-link' %>
+              </li>
+              <li class="copy__nav-item">
+                <%= link_to 'Pet-project of railsenjoyer', '#', class: 'copy__nav-link' %>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+      <!-- footer section ends -->
+    </div>
+  </body>
+</html>
+
+

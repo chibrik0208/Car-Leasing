@@ -1,0 +1,32 @@
+<% content_for :header_class, 'header-black' %>
+<section class="new__cars-choose">
+  <div class="container">
+    <h2 class="section-title">
+      Choose your car
+    </h2>
+    <div class="tabs">
+      <div class="tabs__btn">
+        <button class="tabs__btn-item">Cars and Minivans</button>
+        <button class="tabs__btn-item">Trucks</button>
+        <button class="tabs__btn-item">Crossovers & SUVs</button>
+        <button class="tabs__btn-item">Electrified</button>
+      </div>
+      <div class="tabs__content">
+        <div class="tabs__content-item">
+          <% @cars.each do |car| %>
+            <div class="card">
+              <%= image_tag car.image, class: 'card__img' if car.image.attached? %>
+              <div class="card__content">
+                <h4 class="card__title"><%= link_to car.name, car %></h4>
+                <p class="card__text">Starting from <%= car.price %>$</p>
+                <p class="card__price"><%= car.leasing_price %>$/mo</p>
+              </div>
+              <p class="card__link"><%= link_to 'see details', car_path(car) %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<%= render 'pages/blog' %>
