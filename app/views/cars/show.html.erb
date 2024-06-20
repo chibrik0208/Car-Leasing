@@ -1,20 +1,114 @@
-<h1><%= @car.name %></h1>
-<p>
-  <strong>Description</strong>
-  <%= @car.description %>
-</p>
-<p>
-  <strong>Price:</strong>
-  <%= number_to_currency(@car.price) %>
-</p>
-<p>
-  <strong>Leasing price:</strong>
-  <%= number_to_currency(@car.leasing_price) %>
-</p>
-<% if @car.image.attached? %>
-  <p><%= image_tag @car.image %></p>
-<% end %>
-
-<%= link_to 'Edit', edit_car_path(@car), class: 'btn btn-primary' %>
-<%= link_to 'Back', new_cars_path, class: 'btn btn-secondary' %>
-<%= link_to 'Delete', @car, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
+<% content_for :header_class, 'header-black' %>
+<section class="show__car">
+  <div class="container">
+    <h1><%= @car.name %></h1>
+    <p>
+      <strong>Description</strong>
+      <%= @car.description %>
+    </p>
+    <p>
+      <strong>Price:</strong>
+      <%= number_to_currency(@car.price) %>
+    </p>
+    <p>
+      <strong>Leasing price:</strong>
+      <%= number_to_currency(@car.leasing_price) %>
+    </p>
+    <p>
+      <strong>Category:</strong>
+      <% if @car.category.present? %>
+      <p><%= @car.category %></p>
+      <% end %>
+    </p>
+    <% if @car.image.attached? %>
+      <p><%= image_tag @car.image %></p>
+    <% end %>
+    <p>
+      <strong>Color:</strong>
+      <%= @car.color %>
+    </p>
+    <p>
+      <strong>Year:</strong>
+      <%= @car.year %>
+    </p>
+    <p>
+      <strong>Mileage:</strong>
+      <%= @car.mileage %>
+    </p>
+    <p>
+      <strong>Transmission Type:</strong>
+      <%= @car.transmission_type %>
+    </p>
+    <p>
+      <strong>Engine Type:</strong>
+      <%= @car.engine_type %>
+    </p>
+    <p>
+      <strong>Body Type:</strong>
+      <%= @car.body_type %>
+    </p>
+    <p>
+      <strong>Engine Power:</strong>
+      <%= @car.engine_power %>
+    </p>
+    <p>
+      <strong>Drivetrain:</strong>
+      <%= @car.drivetrain %>
+    </p>
+    <p>
+      <strong>Fuel Consumption:</strong>
+      <%= @car.fuel_consumption %>
+    </p>
+    <p>
+      <strong>City:</strong>
+      <%= @car.city %>
+    </p>
+    <p>
+      <strong>Exterior:</strong>
+      <%= join_and_clean(@car.exterior) %>
+    </p>
+    <p>
+      <strong>Safety Systems:</strong>
+      <%= join_and_clean(@car.safety_systems) %>
+    </p>
+    <p>
+      <strong>Airbags:</strong>
+      <%= join_and_clean(@car.airbags) %>
+    </p>
+    <p>
+      <strong>Interior:</strong>
+      <%= join_and_clean(@car.interior) %>
+    </p>
+    <p>
+      <strong>Comfort:</strong>
+      <%= join_and_clean(@car.comfort) %>
+    </p>
+    <p>
+      <strong>Heating:</strong>
+      <%= join_and_clean(@car.heating) %>
+    </p>
+    <p>
+      <strong>Climate:</strong>
+      <%= join_and_clean(@car.climate) %>
+    </p>
+    <p>
+      <strong>Multimedia:</strong>
+      <%= join_and_clean(@car.multimedia) %>
+    </p>
+    <p>
+      <strong>Headlights:</strong>
+      <%= join_and_clean(@car.headlights) %>
+    </p>
+    <p>
+      <strong>Created at:</strong>
+      <%= @car.created_at.strftime("%H:%M - %d %B %Y") %>
+    </p>
+    <p>
+      <strong>Last Changes:</strong>
+      <%= @car.updated_at.strftime("%H:%M - %d %B %Y") %>
+    </p>
+    <%= link_to 'Edit', edit_car_path(@car), class: 'btn btn-primary' %>
+    <%= link_to 'Back', new_cars_path, class: 'btn btn-secondary' %>
+    <%= link_to 'Delete', @car, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
+  </div>
+</section>
