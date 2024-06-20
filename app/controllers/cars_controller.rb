@@ -40,6 +40,11 @@ class CarsController < ApplicationController
   end
 
   def car_params
-    params.require(:car).permit(:name, :description, :price, :leasing_price, :image)
+    params.require(:car).permit(
+      :name, :description, :price, :leasing_price, :image, :category, :color, :year,
+      :mileage, :transmission_type, :engine_type, :body_type, :engine_capacity, :engine_power,
+      :drivetrain, :fuel_consumption, :city, exterior: [], safety_systems: [], airbags: [],
+      interior: [], comfort: [], heating: [], climate: [], multimedia: [], headlights: []
+    )
   end
 end

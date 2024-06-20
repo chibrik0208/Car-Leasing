@@ -1,0 +1,178 @@
+<%= form_with model: @car, local: true do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+  </div>
+  <div class="field">
+    <%= form.label :leasing_price %>
+    <%= form.number_field :leasing_price %>
+  </div>
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.select :category, options_for_select([['PRE-OWNED', 'PRE-OWNED'], ['NEW', 'NEW']]) %>
+  </div>
+  <div class="field">
+    <%= form.label :color %>
+    <%= form.text_field :color %>
+  </div>
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.number_field :year %>
+  </div>
+  <div class="field">
+    <%= form.label :miliage %>
+    <%= form.number_field :miliage %>
+  </div>
+  <div class="field">
+    <%= form.label :transmission_type %>
+    <%= form.select :transmission_type, options_for_select([
+      ['Manual', 'Manual'], 
+      ['Automatic', 'Automatic'], 
+      ['CVT', 'CVT'], 
+      ['AMT', 'AMT'], 
+      ['Semi', 'Semi']
+    ]) %>
+  </div>
+  <div class="field">
+    <%= form.label :engine_type %>
+    <%= form.select :engine_type, options_for_select([
+      ['Gasoline', 'Gasoline'], 
+      ['Diesel', 'Diesel'], 
+      ['Electric', 'Electric'], 
+      ['Hybrid', 'Hybrid']
+    ]) %>
+  </div>
+  <div class="field">
+    <%= form.label :exterior %>
+    <%= form.collection_check_boxes :exterior, [
+      'Alloy wheels',
+      'Roof rails',
+      'Spoiler', 
+      'Tinted windows',
+      'Dumper skirt'
+    ], :itself, :itself %>
+  </div>
+  <div class="field">
+    <%= form.label :safety_systems %>
+    <%= form.collection_check_boxes :safety_systems, [
+      'ABS',
+      'ESP',
+      'Anti-slip', 
+      'Immobilizer'
+    ], :itself, :itself %>
+  </div>
+  <div class="field">
+    <%= form.label :airbags %>
+    <%= form.collection_check_boxes :airbags, [
+      'Front',
+      'Lateral',
+      'Rear' 
+    ], :itself, :itself %>
+  </div>
+  <div class="field">
+    <%= form.label :interior %>
+    <%= form.collection_check_boxes :interior, [
+      'Genuine leather',
+      'Dark',
+      'White',
+      'Red',
+      'Blue',
+      'Fabric'
+    ], :itself, :itself %>
+  </div>
+  <div class="field">
+    <%= form.label :comfort %>
+    <%= form.collection_check_boxes :comfort, [
+      'Cruise control',
+      'Multimedia control from the steering wheel',
+      'Front electric windows',
+      'Rear electric windows'
+    ], :itself, :itself %>
+  </div>
+  <div class="field">
+    <%= form.label :heating %>
+    <%= form.collection_check_boxes :heating, [
+      'Wind shield',
+      'Mirrors',
+      'Seats'
+    ], :itself, :itself %>
+  </div>
+  <div class="field">
+    <%= form.label :climate %>
+    <%= form.collection_check_boxes :climate, [
+      'Climate control',
+      'Air control'
+    ], :itself, :itself %>
+  </div>
+  <div class="field">
+    <%= form.label :multimedia %>
+    <%= form.collection_check_boxes :multimedia, [
+      'Multimedia',
+      'AUX or iPod',
+      'CD or MP3',
+      'USB'
+    ], :itself, :itself %>
+  </div>
+  <div class="field">
+    <%= form.label :headlights %>
+    <%= form.collection_check_boxes :headlights, [
+      'Fog',
+      'LED'
+    ], :itself, :itself %>
+  </div>
+  <div class="field">
+    <%= form.label :body_type %>
+    <%= form.select :body_type, options_for_select([
+      ['Sedan', 'Sedan'],
+      ['Hatchback', 'Hatchback'],
+      ['Estate', 'Estate'],
+      ['Coupe', 'Coupe'],
+      ['Cabriolet', 'Cabriolet'],
+      ['SUV', 'SUV'],
+      ['Pickup', 'Pickup'],
+      ['Minivan', 'Minivan'],
+      ['Van', 'Van'],
+      ['Truck', 'Truck']
+    ]) %>
+  </div>
+  <div class="field">
+    <%= form.label :engine_capacity %>
+    <%= form.number_field :engine_capacity, step: 0.01 %>
+  </div>
+  <div class="field">
+    <%= form.label :engine_power %>
+    <%= form.number_field :engine_power %>
+  </div>
+  <div class="field">
+    <%= form.label :drivetrain %>
+    <%= form.select :drivetrain, options_for_select([
+      ['Front wheel', 'Front wheel'],
+      ['Rear wheel', 'Rear wheel'],
+      ['All wheel', 'All wheel'],
+      ['Part time', 'Part time']
+    ]) %>
+  </div>
+  <div class="field">
+    <%= form.label :fuel_consumption %>
+    <%= form.number_field :fuel_consumption, step: 0.01 %>
+  </div>
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
