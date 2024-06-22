@@ -9,6 +9,7 @@
  *= require main
  *= require contact
  *= require new_cars
+ *= require show_cars
  */
 
 
@@ -33,4 +34,36 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.action__buttons {
+  display: flex;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  justify-content: space-between;
+  border-top: 3px solid #83bbfa;
+}
+
+.btn-primary, .btn-secondary, .btn-danger {
+  border: 1px solid #151515;
+  border-radius: 5px;
+  padding: 10px 50px;
+}
+
+.btn-primary:hover, .btn-secondary:hover, .btn-danger:hover {
+  transition: 0.3s;
+  transform: scale(1.3);
+}
+
+.btn-primary {
+  background-color: #151515;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #83bbfa;
+}
+
+.btn-danger {
+  background-color: rgb(243, 170, 192);
 }

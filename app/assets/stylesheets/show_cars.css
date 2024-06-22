@@ -1,0 +1,119 @@
+.show__car {
+  padding-top: 240px;
+  background: linear-gradient(to top, rgb(241, 240, 245), rgb(241, 240, 245) 50%, rgb(215, 219, 250)100%);
+}
+
+.car__title-main {
+  display: flex;
+  font-size: 26px;
+  font-weight: 700;
+  gap: 10px;
+}
+
+.car__offer-timemarks {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.car__offer-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 20px;
+  gap: 60px;
+}
+
+.car__img {
+  height: 480px;
+  width: auto;
+}
+
+.car__offer-price, .car__offer-leasing, .car__offer-stats {
+  border: 2px solid #151515;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px 40px;
+  font-weight: 700;
+}
+
+.car__offer-price:hover, .car__offer-leasing:hover {
+  background-color: #83bbfa;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.car__offer-price {
+  font-size: 24px;
+}
+
+.car__offer-leasing {
+  margin-top: 20px;
+}
+
+.car__offer-stats {
+  margin-top: 50px;
+}
+
+.car__offer-stats, .car__offer-stats-add {
+  line-height: 30px;
+  text-align: left;
+}
+
+.car__offer-stats-add {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 20px;
+  border: 2px solid #151515;
+  border-radius: 5px;
+  padding: 10px 30px;
+}
+
+.car__offer-stats-add p {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.car__offer-stats-add .car__offer-stats-value {
+  margin-left: auto;
+}
+
+.car__offer-stats-item {
+  border-bottom: 1px solid #151515;
+}
+
+.car__offer-stats-item:last-of-type {
+  border-bottom: none;
+}
+
+.car__offer-description {
+  padding-top: 60px;
+}
+
+.car__offer-description-title {
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.car__offer-description-item {
+  margin-top: 20px;
+  line-height: 30px;
+}
+
+.car__offer-substats {
+  border-top: 3px solid #83bbfa;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 80px;
+}
+
+.car__offer-substats-title {
+  margin-top: 50px;
+}
+
+.car__offer-substats-content {
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
