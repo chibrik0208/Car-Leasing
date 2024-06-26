@@ -2,7 +2,21 @@ class CarsController < ApplicationController
   before_action :set_car, only: %i[show edit update destroy]
 
   def index
-    @cars = Car.all
+    @cars = if params[:category] == 'NEW'
+              Car.new_cars
+            elsif params[:category] == 'PRE_OWNED'
+              Car.pre_owned_cars
+            else
+              Car.all
+            end
+
+    if params[:body_type]
+      @cars = @cars.where(body_type: params[:body_type])
+    elsif params[:engine_type]
+      @cars = @cars.where(engine_type: params[:engine_type])
+    end
+
+    @cars = @cars.paginate(page: params[:page], per_page: 12)
   end
 
   def show
