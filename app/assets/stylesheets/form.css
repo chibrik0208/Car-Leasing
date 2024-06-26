@@ -1,0 +1,24 @@
+.form-horizontal .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-horizontal .form-control {
+  border-radius: 0.25rem;
+}
+
+.form-horizontal .form-control-file {
+  border: 1px solid #000000;
+  border-radius: 0.25rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #83bbfa;
+}
+
+.form-horizontal .btn-primary {
+  background-color: #83bbfa;
+  border-color: #83bbfa;
+}
+
+.form-horizontal .btn-primary:hover {
+  background-color: #1f88ff;
+  border-color: #83bbfa;
+}
