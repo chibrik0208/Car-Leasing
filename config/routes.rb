@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   get '/pre-owned_cars', to: 'cars#index', category: 'PRE_OWNED'
   get '/cars/:category/:body_type', to: 'cars#index', as: 'filtered_cars'
 
+  get 'finance', to: 'pages#finance'
+  get 'leasevsbuy', to: 'pages#leasevsbuy'
   get 'contact', to: 'pages#contact'
 end

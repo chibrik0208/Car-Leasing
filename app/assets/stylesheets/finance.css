@@ -1,0 +1,140 @@
+.finance {
+  padding-top: 240px;
+  padding-bottom: 150px;
+  background: linear-gradient(to top, rgb(241, 240, 245), rgb(241, 240, 245) 50%, rgb(215, 219, 250)100%);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse-text {
+  animation: pulse 2s infinite;
+}
+
+.lease__offers-title {
+  font-size: 46px;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.lease__offers {
+  padding-top: 60px;
+  padding-bottom: 150px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.lease__offer {
+  border: 2px solid #007aff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  background-color: #f9f9f9;
+  width: 100%;
+  max-width: 350px;
+}
+
+.lease__offer:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.lease__offer-title {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.lease__offer-list {
+  padding: 0;
+  list-style-type: none;
+  flex-grow: 1;
+}
+
+.lease__offer-item {
+  margin-bottom: 15px;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lease__offer-item strong {
+  font-weight: 600;
+  padding-bottom: 5px;
+}
+
+.finance__calculator {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.calcalator__title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.calculator-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.calculator-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.lease__rate {
+  padding-top: 20px;
+}
+
+.lease__time {
+  padding-top: 20px;
+}
+
+.calculator-form input[type="text"],
+.calculator-form select,
+.calcalator-form input[type="range"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.calcalator-form input[type="range"] {
+  height: 20px;
+}
+
+.calcalator-form button:hover {
+  background-color: #45a049;
+}
+
+.result {
+  min-width: 650px;
+  padding-top: 60px;
+  text-align: start;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #45a049;
+}

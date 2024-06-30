@@ -1,0 +1,144 @@
+<% content_for :header_class, 'header-black' %>
+  <section class="finance">
+    <div class="container">
+      <div class="lease__offers-title pulse-text">
+        Check out our lease offers
+      </div>
+      <div class="lease__offers">
+        <div class="lease__offer">
+          <div class="lease__offer-title">
+            Standard Leasing Plan
+          </div>
+          <ul class="lease__offer-list">
+            <li class="lease__offer-item">
+              <strong>Affordable Monthly Payments:</strong>
+              <p>
+                This plan offers low monthly payments, making it budget-friendly.
+              </p>
+            </li>
+            <li class="lease__offer-item">
+              <strong>Standard Mileage Allowance:</strong>
+              <p>
+                Includes a generous mileage allowance of 12,000 miles per year.
+              </p>
+            </li>
+            <li class="lease__offer-item">
+              <strong>Flexible Lease Terms:</strong>
+              <p>
+                Choose from a range of lease durations, from 24 to 48 months.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="lease__offer">
+          <div class="lease__offer-title">
+            Premium Leasing Plan
+          </div>
+          <ul class="lease__offer-list">
+            <li class="lease__offer-item">
+              <strong>Enhanced Vehicle Selection:</strong>
+              <p>
+                Access to a wider range of high-end and luxury vehicles.
+              </p>
+            </li>
+            <li class="lease__offer-item">
+              <strong>Comprehensive Insurance:</strong>
+              <p>
+                Full insurance coverage included, ensuring peace of mind.
+              </p>
+            </li>
+            <li class="lease__offer-item">
+              <strong>Higher Mileage Limit:</strong>
+              <p>
+                Enjoy up to 15,000 miles per year, perfect for frequent travelers.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="lease__offer">
+          <div class="lease__offer-title">
+            Business Leasing Plan
+          </div>
+          <ul class="lease__offer-list">
+            <li class="lease__offer-item">
+              <strong>Tax Benefits:</strong>
+              <p>
+                Take advantage of potential tax deductions.
+              </p>
+            </li>
+            <li class="lease__offer-item">
+              <strong>Fleet Management Options:</strong>
+              <p>
+                Special rates and services for managing multiple vehicles.
+              </p>
+            </li>
+            <li class="lease__offer-item">
+              <strong>Flexible Contract Terms:</strong>
+              <p>
+                Options for short-term and long-term leases.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="finance__calculator">
+        <h1 class="calcalator__title">Calculate your Lease</h1>
+        <div class="calculator-form" id="calculator-form">
+          <div>
+            <label for="principal">Your dream car's cost:</label>
+            <input type="text" id="principal" oninput="calculateInterest()">
+          </div>
+          <div class="lease__rate">
+            <label for="rate">Lease Percentage (%)</label>
+            <select id="rate" onchange="calculateInterest()">
+              <option value="9">9% (starting from 4 years lease)</option>
+              <option value="12">12% (starting from 3 years lease)</option>
+              <option value="15">15% (starting from 1 year lease)</option>
+            </select>
+          </div>
+          <div class="lease__time">
+            <label for="time">Lease Time</label>
+            <input type="range" id="time" min="1" max="5" step="1" value="1" oninput="updateTimeValue(this.value); calculateInterest()">
+            <span id="time-value">1</span> year(years)
+          </div>
+          <div class="result" id="result"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+<%= render 'pages/blog' %>
+<script>
+function updateTimeValue(value) {
+    document.getElementById('time-value').textContent = value;
+    adjustRate(value);
+  }
+
+  function adjustRate(years) {
+    var rateSelect = document.getElementById('rate');
+    if (years >= 4) {
+      rateSelect.value = '9';
+    } else if (years >= 3) {
+      rateSelect.value = '12';
+    } else {
+      rateSelect.value = '15';
+    }
+  }
+
+  function calculateInterest() {
+    var principal = parseFloat(document.getElementById('principal').value);
+    var rate = parseFloat(document.getElementById('rate').value);
+    var time = parseFloat(document.getElementById('time').value);
+
+    if (isNaN(principal)  isNaN(rate)  isNaN(time)) {
+      document.getElementById('result').innerText = 'Please, enter correct values';
+      return;
+    }
+
+    var interest = principal * (1 + (rate / 100) * time);
+    document.getElementById('result').innerText = 'Lease price: ' + interest.toFixed(2) + ' USD$';
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    calculateInterest();
+  });
+</script>
