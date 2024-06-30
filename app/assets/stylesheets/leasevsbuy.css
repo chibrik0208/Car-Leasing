@@ -1,0 +1,56 @@
+.lease-vs-buy {
+  padding-top: 250px;
+  padding-bottom: 100px;
+  background: linear-gradient(to top, rgb(241, 240, 245), rgb(241, 240, 245) 50%, rgb(215, 219, 250)100%);
+}
+
+.lease-vs-buy__title {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.lease-vs-buy__section {
+  margin-bottom: 50px;
+}
+
+.lease-vs-buy__section-title {
+  border-bottom: 3px solid rgb(158, 158, 255);
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.lease-vs-buy__section-title::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 30%;
+  height: 3px;
+  background-color: #007bff;
+}
+
+.lease-vs-buy__section-content {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.lease-vs-buy__benefits-title,
+.lease-vs-buy__considerations-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #007bff;
+}
+
+.lease-vs-buy__benefits-list,
+.lease-vs-buy__considerations-list {
+  padding-left: 20px;
+}
+
+.lease-vs-buy__benefits-list li,
+.lease-vs-buy__considerations-list li {
+  margin-bottom: 10px;
+}
